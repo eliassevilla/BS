@@ -25,10 +25,10 @@ DataDB <- dbGetQuery(MyDataBase, "select * from CountryLanguage")
 
 head(DataDB)
 
-SP <- DataDB %>% filter(Language == "Spanish")
-class(SP)
+ESP <- DataDB %>% filter(Language == "Spanish")
+class(ESP)
 
-SP %>% ggplot(aes( x = CountryCode, y = Percentage, fill = IsOfficial )) + 
+ESP %>% ggplot(aes( x = CountryCode, y = Percentage, fill = IsOfficial )) + 
   geom_bin2d() +
   coord_flip()
 
